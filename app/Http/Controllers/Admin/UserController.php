@@ -7,17 +7,20 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    // マイページを開く
     public function index()
   {
-      return view('member.edit');
+      return view('member.index');
   }
   
-  public function edit()
+  // プロフィール編集内容を呼び出す
+    public function edit()
   {
       return view('member.edit');
   }
   
-  public function update()
+  // プロフィール編集内容を保存する
+    public function update()
   {
       return view('member.edit');
   }
