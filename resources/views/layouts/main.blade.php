@@ -26,6 +26,8 @@
     </head>
     <body>
         <div id="app">
+            <h1>My Recipes</h1>
+            <!--
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div class="container">
@@ -37,18 +39,44 @@
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
+                    -->
+                        <!-- Left Side Of Navbar 
                         <ul class="navbar-nav mr-auto">
-
+                            <li>top</li>
+                            <li>recipe</li>
+                            <li>mypage</li>
                         </ul>
-
-                        <!-- Right Side Of Navbar -->
+                        -->
+                        <!-- Right Side Of Navbar
                         <ul class="navbar-nav ml-auto">
                         </ul>
                     </div>
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
+             -->
+            
+            <div class="container">
+                <div class="row">
+                    <form class="form-inline col-md-8">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">キーワードで探す</label>
+                        <input type="text" class="form-control m-1" id="exampleInputEmail1" placeholder="例：クッキー">
+                      </div>
+                      <button type="submit" class="btn btn-default m-1">検索</button>
+                    </form>
+                    <a class="btn btn-info col-md-1 m-1" href="#" role="button">ログイン</a>
+                    <a class="btn btn-info col-md-1 m-1" href="#" role="button">新規登録</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 text-center m-1">カテゴリーから探す</div>
+                    <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー１</a>
+                    <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー２</a>
+                    <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー１</a>
+                    <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー２</a>
+                    <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー１</a>
+                </div>
+            </div>
 
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}

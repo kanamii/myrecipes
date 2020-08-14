@@ -33,13 +33,13 @@ class RecipeController extends Controller
     //カテゴリー別一覧を表示させる
     public function categoryIndex()
   {
-      return view('category');
+      return view('recipe.category');
   }
     
     //検索結果を表示させる
     public function searchIndex()
   {
-      return view('search');
+      return view('recipe.search');
   }
     
     //

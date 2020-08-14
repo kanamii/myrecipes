@@ -5,9 +5,69 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h1>カテゴリー一覧</h1>
+            <div class="col-md-12 mx-auto">
+                <h5>カテゴリー名</h5>
             </div>
+        </div>
+        <div class="row">
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
+            <section class="col-md-3 card m-1">
+              <img class="card-img" src="images/bear.jpg" alt="">
+              <div class="card-content">
+                <div class="card-title">レシピタイトル</div>
+                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
+              </div>
+            </section>
         </div>
     </div>
 @endsection

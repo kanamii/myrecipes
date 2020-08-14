@@ -16,3 +16,6 @@ Route::get('/', function () {
 */
 
 Route::get('/', 'RecipeController@index');
+Route::get('/recipe/index', 'RecipeController@recipeIndex');
+Route::get('/recipe/search', 'RecipeController@searchIndex');
+Route::get('/recipe/category', 'RecipeController@categoryIndex');
