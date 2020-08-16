@@ -77,7 +77,18 @@
                     <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー１</a>
                 </div>
             </div>
-
+            <div class="container">
+                <div class="row">
+                    <p>確認用リンク</p>
+                    <a href="{{ url('/') }}">トップ</a>
+                    <a href="{{ url('/register') }}">会員登録</a>
+                    <a href="{{ url('/login') }}">ログイン</a>
+                    <a href="{{ action('RecipeController@searchIndex') }}">検索結果</a>
+                    <a href="{{ action('RecipeController@recipeIndex') }}">レシピ一覧</a>
+                    <a href="{{ action('RecipeController@categoryIndex') }}">カテゴリー別一覧</a>
+                    <a href="{{ action('RecipeController@recipe') }}">レシピ個別ページ</a>
+                </div>
+            </div>
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')

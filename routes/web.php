@@ -19,6 +19,10 @@ Route::get('/', 'RecipeController@index');
 Route::get('/recipe/index', 'RecipeController@recipeIndex');
 Route::get('/recipe/search', 'RecipeController@searchIndex');
 Route::get('/recipe/category', 'RecipeController@categoryIndex');
+Route::get('/recipe/id', 'RecipeController@recipe');
+
+Route::get('/recipe/id/edit', 'Admin\RecipeController@edit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
