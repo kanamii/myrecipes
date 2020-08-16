@@ -12,46 +12,57 @@
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">レシピの名前</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="例：基本のショートケーキ">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">カテゴリー</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <select class="form-control">
+              <option>ケーキ</option>
+              <option>焼き菓子</option>
+              <option>ゼリー・アイス</option>
+              <option>和菓子</option>
+              <option>そのほか</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">レシピの説明</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <textarea class="form-control" rows="3" placeholder="例：基本的なショートケーキの作り方です"></textarea>
           </div>
           <div class="form-group">
             <label for="exampleInputFile">レシピの写真</label>
             <input type="file" id="exampleInputFile">
           </div>
-          <div class="form-group">
+          <div class="form-inline">
             <label for="exampleInputEmail1">材料</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
+            <input type="text" class="form-control m-2" id="exampleInputEmail1" placeholder="小麦粉">
             <label for="exampleInputEmail1">分量</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <input type="text" class="form-control m-2" id="exampleInputEmail1" placeholder="100g">
+          </div>
+          <div class="form-inline">
+            <label for="exampleInputEmail1">材料</label>
+            <input type="text" class="form-control m-2" id="exampleInputEmail1" placeholder="たまご">
+            <label for="exampleInputEmail1">分量</label>
+            <input type="text" class="form-control m-2" id="exampleInputEmail1" placeholder="1個">
+          </div>
+          <div class="form-inline">
+            <label for="exampleInputEmail1">材料</label>
+            <input type="text" class="form-control m-2" id="exampleInputEmail1" placeholder="いちご">
+            <label for="exampleInputEmail1">分量</label>
+            <input type="text" class="form-control m-2" id="exampleInputEmail1" placeholder="適量">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">手順１</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <textarea class="form-control" rows="3"></textarea>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">手順２</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <textarea class="form-control" rows="3"></textarea>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">手順３</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <textarea class="form-control" rows="3"></textarea>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">投稿</button>
         </form>
     </div>
 @endsection
