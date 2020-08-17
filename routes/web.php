@@ -21,7 +21,7 @@ Route::get('/recipe/search', 'RecipeController@searchIndex');
 Route::get('/recipe/category', 'RecipeController@categoryIndex');
 Route::get('/recipe/id', 'RecipeController@recipe');
 
-Route::get('/recipe/id/edit', 'Admin\RecipeController@edit');
+Route::get('/recipe/id/edit', 'Admin\RecipeController@edit')->name('recipe.edit');
 
 Auth::routes();
 

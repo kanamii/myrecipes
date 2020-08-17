@@ -61,7 +61,7 @@
                     <a href="{{ action('RecipeController@recipeIndex') }}">レシピ一覧</a>
                     <a href="{{ action('RecipeController@categoryIndex') }}">カテゴリー別一覧</a>
                     <a href="{{ action('RecipeController@recipe') }}">レシピ個別ページ</a>
-                    <a href="{{ action('Admin\RecipeController@edit') }}">レシピ投稿ページ</a>
+                    <a href="{{ route('recipe.edit') }}">レシピ投稿ページ</a>
                 </div>
             </div>
             <main class="py-4">
