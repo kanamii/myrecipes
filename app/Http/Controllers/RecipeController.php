@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recipe;
 
 class RecipeController extends Controller
 {
     //topページを表示させる
     public function index()
   {
-      return view('index');
+      $posts = Recipe::all();
+      
+      return view('index',  ['posts' => $posts]);
   }
     
     //member個別ページを表示させる

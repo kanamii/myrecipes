@@ -18,7 +18,7 @@ class CreateRecipesTable extends Migration
             $table->string('name');
             $table->string('category');
             $table->string('introduction');
-            $table->string('image')->nullable();
+            $table->string('image_path')->nullable();
             $table->string('item1');
             $table->string('item2')->nullable();
             $table->string('item3')->nullable();

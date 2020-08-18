@@ -22,6 +22,9 @@ Route::get('/recipe/category', 'RecipeController@categoryIndex');
 Route::get('/recipe/id', 'RecipeController@recipe');
 
 Route::get('/recipe/id/edit', 'Admin\RecipeController@edit')->name('recipe.edit');
+Route::get('/recipe/create', 'Admin\RecipeController@add')->name('recipe.create');
+
+Route::post('recipe/create', 'Admin\RecipeController@create');
 
 Auth::routes();
 

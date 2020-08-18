@@ -9,49 +9,68 @@
                 <h5>レシピ編集</h5>
             </div>
         </div>
-        <form>
+        <form action="{{ action('Admin\RecipeController@create') }}" method="post" enctype="multipart/form-data">
+          @if (count($errors) > 0)
+            <ul>
+                @foreach($errors->all() as $e)
+                    <li>{{ $e }}</li>
+                @endforeach
+            </ul>
+          @endif
           <div class="form-group">
-            <label for="exampleInputEmail1">レシピの名前</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">カテゴリー</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">レシピの説明</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">レシピの写真</label>
-            <input type="file" id="exampleInputFile">
+            <label for="name">レシピの名前</label>
+            <input type="text" class="form-control" name="name" placeholder="例：ショートケーキ" >
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">材料</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="category">カテゴリー</label>
+            <select class="form-control" name="category">
+              <option>ケーキ</option>
+              <option>焼き菓子</option>
+              <option>ゼリー・アイス</option>
+              <option>和菓子</option>
+              <option>そのほか</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">分量</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="introduction">レシピの説明</label>
+            <textarea class="form-control" rows="3" placeholder="例：基本的なショートケーキの作り方です" name="introduction"></textarea>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">手順１</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label class="form-control" for="image">レシピの写真</label>
+            <input type="file" class="form-control-file" name="image">
+          </div>
+          <div class="form-inline">
+            <label for="item1">材料</label>
+            <input type="text" class="form-control m-2" name="item1" placeholder="小麦粉">
+            <label for="quantity1">分量</label>
+            <input type="text" class="form-control m-2" name="quantity1" placeholder="100g">
+          </div>
+          <div class="form-inline">
+            <label for="item2">材料</label>
+            <input type="text" class="form-control m-2" name="item2" placeholder="たまご">
+            <label for="quantity2">分量</label>
+            <input type="text" class="form-control m-2" name="quantity2" placeholder="1個">
+          </div>
+          <div class="form-inline">
+            <label for="item3">材料</label>
+            <input type="text" class="form-control m-2" name="item3" placeholder="いちご">
+            <label for="quantity3">分量</label>
+            <input type="text" class="form-control m-2" name="quantity3" placeholder="適量">
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">手順２</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="step1">手順１</label>
+            <textarea class="form-control" rows="3" name="step1"></textarea>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">手順３</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            <label for="step2">手順２</label>
+            <textarea class="form-control" rows="3" name="step2"></textarea>
           </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox"> Check me out
-            </label>
+          <div class="form-group">
+            <label for="step3">手順３</label>
+            <textarea class="form-control" rows="3" name="step3"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          {{ csrf_field() }}
+          <button type="submit" class="btn">投稿</button>
         </form>
     </div>
 @endsection
