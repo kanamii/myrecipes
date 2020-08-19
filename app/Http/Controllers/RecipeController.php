@@ -10,7 +10,7 @@ class RecipeController extends Controller
     //topページを表示させる
     public function index()
   {
-      $posts = Recipe::all();
+      $posts = Recipe::all()->sortByDesc('updated_at');
       
       return view('index',  ['posts' => $posts]);
   }

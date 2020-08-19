@@ -47,8 +47,9 @@ body {
 
 .card-img {
   border-radius: 5px 5px 0 0;
-  max-width: 100%;
-  height: auto;
+  width: 250px;
+  height: 250px;
+  margin-top: 20px;
 }
 
 .card-content {
