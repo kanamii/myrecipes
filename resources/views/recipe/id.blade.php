@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row">
-            <img src="#" alt="レシピの写真" class="img-thumbnail">
+            <img src="#" alt="">
             <p>カテゴリー名</p>
             <img src="#" alt="ユーザー写真" class="img-circle">
             <p>投稿ユーザー名</p>

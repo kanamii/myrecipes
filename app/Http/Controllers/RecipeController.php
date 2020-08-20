@@ -24,6 +24,12 @@ class RecipeController extends Controller
     //レシピ個別ページを表示させる
     public function recipe()
   {
+    /* RecipeModelからデータを取得する
+      $recipe = Recipe::find($request->id);
+      
+      // 送信されてきたフォームデータを格納する
+      $recipe_form = $request->all();
+    */
       return view('recipe.id');
   }
     
