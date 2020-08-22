@@ -36,7 +36,7 @@
             <textarea class="form-control" rows="3" placeholder="例：基本的なショートケーキの作り方です" name="introduction"></textarea>
           </div>
           <div class="form-group">
-            <label class="form-control" for="image">レシピの写真</label>
+            <label for="image">レシピの写真</label>
             <input type="file" class="form-control-file" name="image">
           </div>
           <div class="form-inline">
