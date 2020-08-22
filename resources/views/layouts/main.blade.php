@@ -63,6 +63,7 @@
                     <a href="{{ action('RecipeController@recipe') }}">レシピ個別ページ</a>
                     <a href="{{ route('recipe.edit') }}">レシピ投稿ページ</a>
                     <a href="{{ route('member') }}">メンバーページ</a>
+                    <a href="{{ route('member.edit') }}">メンバー編集ページ</a>
                 </div>
             </div>
             <main class="py-4">
