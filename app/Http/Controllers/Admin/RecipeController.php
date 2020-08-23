@@ -44,15 +44,39 @@ class RecipeController extends Controller
   }
   
   // レシピ編集画面を開く
-  public function edit()
+  public function edit(Request $request)
   {
-      return view('recipe.edit');
+      // Recipe Modelからデータを取得する
+      $recipe = Recipe::find($request->id);
+      if (empty($recipe)) {
+        abort(404);    
+      }
+      return view('recipe.edit',  ['recipe_form' => $recipe]);
   }
   
   // レシピの編集内容を保存する
-  public function update()
+  public function update(Request $request)
   {
-      return view('recipe.edit');
+      // Validationをかける
+      $this->validate($request, Recipe::$rules);
+      // Recipe Modelからデータを取得する
+      $recipe = Recipe::find($request->id);
+      // 送信されてきたフォームデータを格納する
+      $recipe_form = $request->all();
+      if (isset($recipe_form['image'])) {
+        $path = $request->file('image')->store('public/image');
+        $recipe->image_path = basename($path);
+        unset($recipe_form['image']);
+      } elseif (isset($request->remove)) {
+        $recipe->image_path = null;
+        unset($recipe_form['remove']);
+      }
+      unset($recipe_form['_token']);
+
+      // 該当するデータを上書きして保存する
+      $recipe->fill($recipe_form)->save();
+
+      return view('recipe.index');
   }
   
   //　レシピを削除する

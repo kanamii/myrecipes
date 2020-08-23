@@ -19,15 +19,17 @@ Route::get('/', 'RecipeController@index')->name('home');
 Route::get('/recipe/index', 'RecipeController@recipeIndex')->name('recipe.index');
 Route::get('/recipe/search', 'RecipeController@searchIndex')->name('search');
 Route::get('/recipe/category', 'RecipeController@categoryIndex')->name('category');
-Route::get('/recipe/id', 'RecipeController@recipe')->name('recipe');
+Route::get('/recipe', 'RecipeController@recipe')->name('recipe');
 
 Route::get('/member/id', 'RecipeController@member')->name('member');
 Route::get('/member/id/edit', 'Admin\UserController@edit')->name('member.edit');
 
-Route::get('/recipe/id/edit', 'Admin\RecipeController@edit')->name('recipe.edit');
+Route::get('/recipe/edit', 'Admin\RecipeController@edit')->name('recipe.edit');
 Route::get('/recipe/create', 'Admin\RecipeController@add')->name('recipe.add');
 
 Route::post('recipe/create', 'Admin\RecipeController@create')->name('recipe.create');
+Route::post('/recipe/edit', 'Admin\RecipeController@update')->name('recipe.update');
+
 
 Auth::routes();
 

@@ -57,12 +57,12 @@
                     <a href="{{ url('/') }}">トップ</a>
                     <a href="{{ url('/register') }}">会員登録</a>
                     <a href="{{ url('/login') }}">ログイン</a>
-                    <a href="{{ action('RecipeController@searchIndex') }}">検索結果</a>
-                    <a href="{{ action('RecipeController@recipeIndex') }}">レシピ一覧</a>
-                    <a href="{{ action('RecipeController@categoryIndex') }}">カテゴリー別一覧</a>
-                    <a href="{{ action('RecipeController@recipe') }}">レシピ個別ページ</a>
+                    <a href="{{ route('search') }}">検索結果</a>
+                    <a href="{{ route('recipe.index') }}">レシピ一覧</a>
+                    <a href="{{ route('category') }}">カテゴリー別一覧</a>
+                    <a href="{{ route('recipe') }}">レシピ個別ページ</a>
                     <a href="{{ route('recipe.create') }}">レシピ投稿ページ</a>
-                    <a href="{{ route('recipe.edit') }}">レシピ編集ページ</a>
+                    <a href="{{ route('recipe.edit', ['id' => 1]) }}">レシピ編集ページ</a>
                     <a href="{{ route('member') }}">メンバーページ</a>
                     <a href="{{ route('member.edit') }}">メンバー編集ページ</a>
                 </div>
