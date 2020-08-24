@@ -43,7 +43,7 @@
                     <a class="btn btn-info m-1" href="#" role="button">新規登録</a>
                 </div>
                 <div class="row">
-                    <div class="text-center">カテゴリーから探す</div>
+                    <div class="text-center p-2">カテゴリーから探す</div>
                     <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー１</a>
                     <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー２</a>
                     <a class="btn btn-info col-md-2 m-1" href="#" role="button">カテゴリー１</a>
@@ -54,8 +54,8 @@
             <div class="container">
                 <div class="row">
                     <p>確認用リンク</p>
-                    <a href="{{ url('/') }}">トップ</a>
-                    <a href="{{ url('/register') }}">会員登録</a>
+                    <a href="{{ url('/') }}" class="m-1">トップ</a>
+                    <a href="{{ url('/register') }}" class="m-1">会員登録</a>
                     <a href="{{ url('/login') }}">ログイン</a>
                     <a href="{{ route('search') }}">検索結果</a>
                     <a href="{{ route('recipe.index') }}">レシピ一覧</a>

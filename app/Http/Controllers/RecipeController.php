@@ -27,7 +27,7 @@ class RecipeController extends Controller
       // RecipeModelからデータを取得する
       $recipe = Recipe::find($request->id);
       
-      return view('recipe.id');
+      return view('recipe.id', ['recipe_form' => $recipe]);
   }
     
     //レシピ一覧を表示させる
