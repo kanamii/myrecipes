@@ -8,11 +8,11 @@ use App\Recipe;
 class RecipeController extends Controller
 {
     //topページを表示させる
-    public function index()
+    public function index(Request $request)
   {
       $posts = Recipe::all()->sortByDesc('created_at');
       
-      return view('index',  ['posts' => $posts]);
+      return view('index', ['posts' => $posts]);
   }
     
     //member個別ページを表示させる
@@ -43,9 +43,15 @@ class RecipeController extends Controller
   }
     
     //検索結果を表示させる
-    public function searchIndex()
+    public function searchIndex(Request $request)
   {
-      return view('recipe.search');
+      $cond_title = $request->cond_title;
+      if ($cond_title != '') {
+         $posts = Recipe::where('name', $cond_title)->orderBy('created_at','desc')->paginate(8);
+       }else {
+         echo "一致するレシピがありませんでした";
+       }
+      return view('recipe.search',  ['posts' => $posts, 'cond_title' => $cond_title]);
   }
     
     //

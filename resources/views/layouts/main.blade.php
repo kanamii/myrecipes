@@ -37,8 +37,9 @@
                     <form class="form-inline">
                       <div class="form-group">
                         <label for="search">キーワードで探す</label>
-                        <input type="text" class="form-control m-1" id="search" placeholder="例：クッキー">
+                        <input type="text" class="form-control m-1" name="cond_title" placeholder="例：クッキー">
                       </div>
+                      {{ csrf_field() }}
                       <button type="submit" class="btn btn-default m-1">検索</button>
                     </form>
                 </div>
