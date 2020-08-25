@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row">
-          @if($posts != 'null')
+          @if($posts != null)
             @foreach($posts as $recipe)
               <section class="col-md-3 card m-1">
                 <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="レシピの画像">
