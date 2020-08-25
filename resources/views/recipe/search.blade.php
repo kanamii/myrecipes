@@ -10,65 +10,21 @@
             </div>
         </div>
         <div class="row">
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
+          @if($posts != 'null')
+            @foreach($posts as $recipe)
+              <section class="col-md-3 card m-1">
+                <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="レシピの画像">
+                <div class="card-content">
+                  <div class="card-title">{{ str_limit($recipe->name, 70) }}</div>
+                  <p class="card-text">{{ str_limit($recipe->introduction, 200) }}</p>
+                  <a href="{{ route('recipe', ['id' => $recipe->id]) }}">レシピページ</a>
+                  <a href="{{ route('recipe.edit', ['id' => $recipe->id]) }}">レシピ編集ページ</a>
+                </div>
+              </section>
+            @endforeach
+          @else
+            <p>検索結果がありませんでした</p>
+          @endif
         </div>
-                <div class="row">
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-            <section class="col-md-3 card m-1">
-              <img class="card-img" src="images/bear.jpg" alt="">
-              <div class="card-content">
-                <div class="card-title">レシピタイトル</div>
-                <p class="card-text">レシピの詳細や説明を記載するところ。</p>
-              </div>
-            </section>
-        </div>
-
     </div>
 @endsection

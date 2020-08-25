@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="text-left">
-                    <form class="form-inline">
+                    <form class="form-inline" action="{{ action('RecipeController@searchIndex') }}" method="get">
                       <div class="form-group">
                         <label for="search">キーワードで探す</label>
                         <input type="text" class="form-control m-1" name="cond_title" placeholder="例：クッキー">
