@@ -20,7 +20,6 @@
             <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->image_path) }}" alt="">
             <p>{{ $recipe_form->introduction }}</p>
         </div>
-        <h7>材料</h7>
         <table class="table table-striped col-md-6">
             <tr>
                 <th>材料</th>

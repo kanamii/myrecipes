@@ -11,7 +11,6 @@
         <title>@yield('title')</title>
 
         <!-- Scripts -->
-         {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
         <script src="{{ secure_asset('js/app.js') }}" defer></script>
 
         <!-- Fonts -->
@@ -19,9 +18,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        {{-- Laravel標準で用意されているCSSを読み込みます --}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-        {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
     </head>
     <body>
@@ -31,16 +28,19 @@
                 <h1>My Recipes</h1>
             </div>
             <div class="container">
-                <div class="row">
+                <div class="text-right">
+                    <a class="btn btn-info m-1" href="{{ url('/login') }}" role="button">ログイン</a>
+                    <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
+                </div>
+
+                <div class="text-left">
                     <form class="form-inline">
                       <div class="form-group">
-                        <label for="exampleInputEmail1">キーワードで探す</label>
-                        <input type="text" class="form-control m-1" id="exampleInputEmail1" placeholder="例：クッキー">
+                        <label for="search">キーワードで探す</label>
+                        <input type="text" class="form-control m-1" id="search" placeholder="例：クッキー">
                       </div>
                       <button type="submit" class="btn btn-default m-1">検索</button>
                     </form>
-                    <a class="btn btn-info m-1" href="#" role="button">ログイン</a>
-                    <a class="btn btn-info m-1" href="#" role="button">新規登録</a>
                 </div>
                 <div class="row">
                     <div class="text-center p-2">カテゴリーから探す</div>
