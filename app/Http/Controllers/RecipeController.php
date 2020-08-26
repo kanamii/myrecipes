@@ -47,14 +47,11 @@ class RecipeController extends Controller
   {
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
-         $posts = Recipe::where([
-          ['name', 'like', "%$cond_title%"],
-          ['introduction', 'like', "%$cond_title%"],
-          ])->orderBy('created_at','desc')->get();
+         $posts = Recipe::where('name', 'like', "%$cond_title%")->orWhere('introduction', 'like', "%$cond_title%")->orderBy('created_at','desc')->get();
        }else {
          $posts = null;
        }
       return view('recipe.search',  ['posts' => $posts, 'cond_title' => $cond_title]);
   }
-    
+  
 }

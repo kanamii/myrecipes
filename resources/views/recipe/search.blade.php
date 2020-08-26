@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="row">
-          @if($posts != null)
+          @if(isset($posts))
             @foreach($posts as $recipe)
               <section class="col-md-3 card m-1">
                 <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="レシピの画像">
@@ -22,8 +22,10 @@
                 </div>
               </section>
             @endforeach
-          @else
-            <p>検索結果がありませんでした</p>
+          @elseif($posts === null)
+            <p>検索条件を入力してください</p>
+          @elseif($posts->isEmpty())
+            <p>検索結果がありません</p>
           @endif
         </div>
     </div>
