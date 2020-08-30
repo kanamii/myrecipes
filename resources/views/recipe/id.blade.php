@@ -12,8 +12,10 @@
         <div class="row">
             <img src="#" alt="">
             <p>{{ $recipe_form->category }}</p>
-            <img src="#" alt="ユーザー写真" class="img-circle">
-            <p>投稿ユーザー名</p>
+            <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->user->image_path) }}" alt="">
+
+            <img src="#" alt="※メンバー画像" class="img-circle">
+            <p>投稿者：{{ $recipe_form->user->name }}</p>
             <a href="{{ route('recipe.edit', ['id' => $recipe_form->id]) }}">レシピ編集ページ</a>
         </div>
         <div class="row">

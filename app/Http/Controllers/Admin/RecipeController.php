@@ -5,9 +5,16 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Recipe;
+use App\User;
 
 class RecipeController extends Controller
 {
+  // ログインしていなければログインページを表示する
+  public function __construct()
+    {
+        $this->middleware('auth');
+    }
+  
     // レシピ追加画面を開く
     public function add()
   {
@@ -30,6 +37,8 @@ class RecipeController extends Controller
       } else {
         $recipe->image_path = null;
       }
+      
+      $recipe->user_id = $request->user()->id;
 
       // フォームから送信されてきた_tokenを削除する
       unset($form['_token']);
@@ -84,4 +93,5 @@ class RecipeController extends Controller
   {
       return view('recipe.edit');
   }
+  
 }

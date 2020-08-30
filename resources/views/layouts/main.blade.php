@@ -29,8 +29,19 @@
             </div>
             <div class="container">
                 <div class="text-right">
-                    <a class="btn btn-info m-1" href="{{ url('/login') }}" role="button">ログイン</a>
-                    <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
+                    {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
+                    @guest
+                        <a class="btn btn-info m-1" href="{{ route('login') }}">ログイン</a>
+                        <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
+                    {{-- ログインしていたらログアウトボタンを表示 --}}
+                    @else
+                        <a class="btn btn-info m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endguest
                 </div>
 
                 <div class="text-left">
@@ -61,9 +72,7 @@
                     <a href="{{ route('search') }}">検索結果</a>
                     <a href="{{ route('recipe.index') }}">レシピ一覧</a>
                     <a href="{{ route('category') }}">カテゴリー別一覧</a>
-                    <a href="{{ route('recipe') }}">レシピ個別ページ</a>
                     <a href="{{ route('recipe.create') }}">レシピ投稿ページ</a>
-                    <a href="{{ route('recipe.edit', ['id' => 1]) }}">レシピ編集ページ</a>
                     <a href="{{ route('member') }}">メンバーページ</a>
                     <a href="{{ route('member.edit') }}">メンバー編集ページ</a>
                 </div>

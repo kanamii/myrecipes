@@ -18,4 +18,9 @@ class Recipe extends Model
         'quantity1' => 'required',
         'step1' => 'required',
     );
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

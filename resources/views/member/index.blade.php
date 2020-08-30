@@ -10,12 +10,14 @@
             </div>
         </div>
         <div class="row">
+            <img class="card-img" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
+
             プロフィール画像<img class="" src="#" alt="">
-            <p>ユーザー名</p>
+            <p>{{ $member->name }}</p>
             <a href="#" class="btn">編集</a>
         </div>
         <div class="row">
-            <p>自己紹介コメント</p>
+            <p>{{ $member->introduction }}</p>
         </div>
         <div class="row">
             <p>投稿レシピ一覧</p>
