@@ -13,9 +13,9 @@
             <img src="#" alt="">
             <p>{{ $recipe_form->category }}</p>
             <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->user->image_path) }}" alt="">
+            <p>投稿者：</p>
+            <a href="{{ route('member', ['id' => $recipe_form->user->id]) }}">{{ $recipe_form->user->name }}</a>
 
-            <img src="#" alt="※メンバー画像" class="img-circle">
-            <p>投稿者：{{ $recipe_form->user->name }}</p>
             <a href="{{ route('recipe.edit', ['id' => $recipe_form->id]) }}">レシピ編集ページ</a>
         </div>
         <div class="row">

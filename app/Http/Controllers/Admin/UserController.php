@@ -33,10 +33,10 @@ class UserController extends Controller
       $member = User::find($request->id);
       // 送信されてきたフォームデータを格納する
       $member_form = $request->all();
-      if (isset($member_form['image'])) {
-        $path = $request->file('image')->store('public/image');
+      if (isset($member_form['profileImage'])) {
+        $path = $request->file('profileImage')->store('public/image');
         $member->image_path = basename($path);
-        unset($member_form['image']);
+        unset($member_form['profileImage']);
       } elseif (isset($request->remove)) {
         $member->image_path = null;
         unset($member_form['remove']);

@@ -11,17 +11,15 @@
         </div>
         <div class="row">
             <img class="card-img" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
-
-            プロフィール画像<img class="" src="#" alt="">
             <p>{{ $member->name }}</p>
-            <a href="#" class="btn">編集</a>
+            <a href="{{ route('member.edit', ['id' => $member->id]) }}" class="btn">編集</a>
         </div>
         <div class="row">
             <p>{{ $member->introduction }}</p>
         </div>
         <div class="row">
             <p>投稿レシピ一覧</p>
-            <a href="#" class="btn">レシピを投稿する</a>
+            <a href="{{ route('recipe.add') }}" class="btn">レシピを投稿する</a>
         </div>
         <div class="row">
             <section class="col-md-3 card m-1">
