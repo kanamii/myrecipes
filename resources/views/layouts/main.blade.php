@@ -35,6 +35,7 @@
                         <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
                     {{-- ログインしていたらログアウトボタンを表示 --}}
                     @else
+                        <a href="{{ route('member', auth()->user()->id) }}">{{ auth()->user()->name }}</a>
                         <a class="btn btn-info m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
@@ -69,12 +70,9 @@
                     <a href="{{ url('/') }}" class="m-1">トップ</a>
                     <a href="{{ url('/register') }}" class="m-1">会員登録</a>
                     <a href="{{ url('/login') }}">ログイン</a>
-                    <a href="{{ route('search') }}">検索結果</a>
                     <a href="{{ route('recipe.index') }}">レシピ一覧</a>
                     <a href="{{ route('category') }}">カテゴリー別一覧</a>
                     <a href="{{ route('recipe.create') }}">レシピ投稿ページ</a>
-                    <a href="{{ route('member') }}">メンバーページ</a>
-                    <a href="{{ route('member.edit') }}">メンバー編集ページ</a>
                 </div>
             </div>
             <main class="py-4">

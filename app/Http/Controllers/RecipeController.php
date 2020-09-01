@@ -35,9 +35,12 @@ class RecipeController extends Controller
   }
     
     //レシピ一覧を表示させる
-    public function recipeIndex()
+    public function recipeIndex(Request $request)
   {
-      return view('recipe.index');
+      // レシピデータを取得する
+      $recipes = Recipe::all()->sortByDesc('created_at');
+      
+      return view('recipe.index', ['recipes' => $recipes]);
   }
     
     //カテゴリー別一覧を表示させる
