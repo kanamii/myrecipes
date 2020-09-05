@@ -21,8 +21,10 @@ class RecipeController extends Controller
   {
       // UserModelからデータを取得する
       $member = User::find($request->id);
-
-      return view('member.index', ['member' => $member]);
+      $posts = Recipe::where('user_id', $member->id) // $userによる投稿を取得
+            ->orderBy('created_at', 'desc'); // 投稿作成日が新しい順に並べる
+      
+      return view('member.index', ['member' => $member, 'posts' => $posts,]);
   }
     
     //レシピ個別ページを表示させる
@@ -44,9 +46,14 @@ class RecipeController extends Controller
   }
     
     //カテゴリー別一覧を表示させる
-    public function categoryIndex()
+    public function categoryIndex(Request $request)
   {
-      return view('recipe.category');
+      $category = $request->input('category');
+      
+      // 一致するレシピデータを取得する
+      $recipes = Recipe::where('category', 'like', $category)->get();
+      
+      return view('recipe.category', ['recipes' => $recipes, 'name' => $category]);
   }
     
     //検索結果を表示させる
@@ -58,13 +65,10 @@ class RecipeController extends Controller
          if ($posts->isEmpty()) {
            $posts = "empty";
          }
-         var_dump($posts);
        } else {
          $posts = null;
-         var_dump($posts);
        }
        
-      
       return view('recipe.search',  ['posts' => $posts, 'cond_title' => $cond_title]);
   }
   
