@@ -48,7 +48,7 @@ class RecipeController extends Controller
     //カテゴリー別一覧を表示させる
     public function categoryIndex(Request $request)
   {
-      $category = $request->input('category');
+      $category = $request->category;
       
       // 一致するレシピデータを取得する
       $recipes = Recipe::where('category', 'like', $category)->get();

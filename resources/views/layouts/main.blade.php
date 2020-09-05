@@ -56,15 +56,13 @@
                     </form>
                 </div>
                 <div class="row">
-                    <form class="form-inline" action="{{ action('RecipeController@categoryIndex') }}" method="get">
-                        <div class="form-group">
-                            <label for="category">カテゴリーから探す</label>
-                            <input type="submit" name="category" value="ケーキ" class="btn btn-info col-md-2 m-1">
-                            <input type="submit" name="category" value="焼き菓子" class="btn btn-info col-md-2 m-1">
-                            <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info col-md-2 m-1">
-                            <input type="submit" name="category" value="和菓子" class="btn btn-info col-md-2 m-1">
-                            <input type="submit" name="category" value="そのほか" class="btn btn-info col-md-2 m-1">
-                        </div>
+                    <form action="{{ action('RecipeController@categoryIndex') }}" method="get">
+                        <label for="category">カテゴリーから探す</label>
+                        <input type="submit" name="category" value="ケーキ" class="btn btn-info col-md-2 m-1">
+                        <input type="submit" name="category" value="焼き菓子" class="btn btn-info col-md-2 m-1">
+                        <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info col-md-2 m-1">
+                        <input type="submit" name="category" value="和菓子" class="btn btn-info col-md-2 m-1">
+                        <input type="submit" name="category" value="そのほか" class="btn btn-info col-md-2 m-1">
                     </form>
                 </div>
             </div>
