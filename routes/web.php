@@ -26,6 +26,7 @@ Route::get('/member/edit', 'Admin\UserController@edit')->name('member.edit');
 
 Route::get('/recipe/edit', 'Admin\RecipeController@edit')->name('recipe.edit');
 Route::get('/recipe/create', 'Admin\RecipeController@add')->name('recipe.add');
+Route::get('/recipe/delete', 'Admin\RecipeController@delete')->name('recipe.delete');
 
 Route::post('/recipe/create', 'Admin\RecipeController@create')->name('recipe.create');
 Route::post('/recipe/edit', 'Admin\RecipeController@update')->name('recipe.update');

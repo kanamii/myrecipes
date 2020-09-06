@@ -73,8 +73,6 @@
                     <a href="{{ url('/register') }}" class="m-1">会員登録</a>
                     <a href="{{ url('/login') }}">ログイン</a>
                     <a href="{{ route('recipe.index') }}">レシピ一覧</a>
-                    <a href="{{ route('category') }}">カテゴリー別一覧</a>
-                    <a href="{{ route('recipe.create') }}">レシピ投稿ページ</a>
                 </div>
             </div>
             <main class="py-4">

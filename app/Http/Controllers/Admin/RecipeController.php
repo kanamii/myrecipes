@@ -48,8 +48,10 @@ class RecipeController extends Controller
       // データベースに保存する
       $recipe->fill($form);
       $recipe->save();
+      
+      $user_id = $recipe->user_id;
 
-      return redirect('recipe/create');
+      return redirect()->route('member', ['id' => $user_id]);
   }
   
   // レシピ編集画面を開く
@@ -84,14 +86,22 @@ class RecipeController extends Controller
 
       // 該当するデータを上書きして保存する
       $recipe->fill($recipe_form)->save();
-
-      return view('recipe.index');
+      
+      $user_id = $recipe->user_id;
+      
+      return redirect()->route('member', ['id' => $user_id]);
   }
   
   //　レシピを削除する
-  public function delete()
+  public function delete(Request $request)
   {
-      return view('recipe.edit');
+      // 該当するレシピをRecipe Modelから取得
+      $recipe = Recipe::find($request->id);
+      $user_id = $recipe->user_id;
+      // 削除する
+      $recipe->delete();
+
+       return redirect()->route('member', ['id' => $user_id]);
   }
   
 }

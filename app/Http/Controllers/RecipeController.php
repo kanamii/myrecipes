@@ -21,9 +21,8 @@ class RecipeController extends Controller
   {
       // UserModelからデータを取得する
       $member = User::find($request->id);
-      $posts = Recipe::where('user_id', $member->id) // $userによる投稿を取得
-            ->orderBy('created_at', 'desc'); // 投稿作成日が新しい順に並べる
-      
+      $posts = Recipe::where('user_id', $member->id)->orderBy('created_at', 'desc')->get(); // $userによる投稿を取得し投稿作成日が新しい順に並べる
+
       return view('member.index', ['member' => $member, 'posts' => $posts,]);
   }
     
