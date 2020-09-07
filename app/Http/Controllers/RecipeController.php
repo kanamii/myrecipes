@@ -23,7 +23,7 @@ class RecipeController extends Controller
       $member = User::find($request->id);
       $posts = Recipe::where('user_id', $member->id)->orderBy('created_at', 'desc')->get(); // $userによる投稿を取得し投稿作成日が新しい順に並べる
 
-      return view('member.index', ['member' => $member, 'posts' => $posts,]);
+      return view('member.index', ['member' => $member, 'posts' => $posts, ]);
   }
     
     //レシピ個別ページを表示させる
