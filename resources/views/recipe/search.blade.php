@@ -13,17 +13,7 @@
           @if($posts === "empty")
             <p>検索結果がありません</p>
           @elseif(isset($posts))
-            @foreach($posts as $recipe)
-              <section class="col-md-3 card m-1">
-                <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="レシピの画像">
-                <div class="card-content">
-                  <div class="card-title">{{ str_limit($recipe->name, 70) }}</div>
-                  <p class="card-text">{{ str_limit($recipe->introduction, 200) }}</p>
-                  <a href="{{ route('recipe', ['id' => $recipe->id]) }}">レシピページ</a>
-                  <a href="{{ route('recipe.edit', ['id' => $recipe->id]) }}">レシピ編集ページ</a>
-                </div>
-              </section>
-            @endforeach
+            @include('parts.recipe')
           @else
             <p>検索条件を入力してください</p>
           @endif

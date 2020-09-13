@@ -39,9 +39,9 @@ class RecipeController extends Controller
     public function recipeIndex(Request $request)
   {
       // レシピデータを取得する
-      $recipes = Recipe::all()->sortByDesc('created_at');
+      $posts = Recipe::all()->sortByDesc('created_at');
       
-      return view('recipe.index', ['recipes' => $recipes]);
+      return view('recipe.index', ['posts' => $posts]);
   }
     
     //カテゴリー別一覧を表示させる
@@ -50,9 +50,9 @@ class RecipeController extends Controller
       $category = $request->category;
       
       // 一致するレシピデータを取得する
-      $recipes = Recipe::where('category', 'like', $category)->get();
+      $posts = Recipe::where('category', 'like', $category)->get();
       
-      return view('recipe.category', ['recipes' => $recipes, 'name' => $category]);
+      return view('recipe.category', ['posts' => $posts, 'name' => $category]);
   }
     
     //検索結果を表示させる
