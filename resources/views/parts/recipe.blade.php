@@ -1,6 +1,7 @@
 @foreach($posts as $post)
     <section class="col-md-3 card m-1">
       @if($post->image_path == null)
+        <img class="card-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
       @else
         <img class="card-img" src="{{ asset('storage/image/' . $post->image_path) }}" alt="">
       @endif

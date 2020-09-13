@@ -29,6 +29,7 @@
               @foreach($posts as $recipe)
                   <section class="col-md-3 card m-1">
                     @if($recipe->image_path == null)
+                      <img class="card-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
                     @else
                       <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="">
                     @endif

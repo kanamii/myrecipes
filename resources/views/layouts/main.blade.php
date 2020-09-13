@@ -33,7 +33,7 @@
                     @guest
                         <a class="btn btn-info m-1" href="{{ route('login') }}">ログイン</a>
                         <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
-                    {{-- ログインしていたらログアウトボタンを表示 --}}
+                    {{-- ログインしていたらメンバーページとログアウトボタンを表示 --}}
                     @else
                         <a href="{{ route('member', auth()->user()->id) }}">{{ auth()->user()->name }}</a>
                         <a class="btn btn-info m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -75,7 +75,6 @@
                 </div>
             </div>
             <main class="py-4">
-                {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
             </main>
         </div>
