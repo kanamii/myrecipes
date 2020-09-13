@@ -11,8 +11,8 @@ class RecipeController extends Controller
     //topページを表示させる
     public function index(Request $request)
   {
-      $posts = Recipe::all()->sortByDesc('created_at');
-      
+      $posts = Recipe::latest()->paginate(10);
+
       return view('index', ['posts' => $posts]);
   }
     
@@ -21,7 +21,7 @@ class RecipeController extends Controller
   {
       // UserModelからデータを取得する
       $member = User::find($request->id);
-      $posts = Recipe::where('user_id', $member->id)->orderBy('created_at', 'desc')->get(); // $userによる投稿を取得し投稿作成日が新しい順に並べる
+      $posts = Recipe::where('user_id', $member->id)->orderBy('created_at', 'desc')->paginate(10); // $userによる投稿を取得し投稿作成日が新しい順に並べる
 
       return view('member.index', ['member' => $member, 'posts' => $posts, ]);
   }
@@ -50,7 +50,7 @@ class RecipeController extends Controller
       $category = $request->category;
       
       // 一致するレシピデータを取得する
-      $posts = Recipe::where('category', 'like', $category)->get();
+      $posts = Recipe::where('category', 'like', $category)->paginate(10);
       
       return view('recipe.category', ['posts' => $posts, 'name' => $category]);
   }
@@ -60,7 +60,7 @@ class RecipeController extends Controller
   {
       $cond_title = $request->cond_title;
       if ($cond_title != '') {
-         $posts = Recipe::where('name', 'like', "%$cond_title%")->orWhere('introduction', 'like', "%$cond_title%")->orderBy('created_at','desc')->get();
+         $posts = Recipe::where('name', 'like', "%$cond_title%")->orWhere('introduction', 'like', "%$cond_title%")->orderBy('created_at','desc')->paginate(10);
          if ($posts->isEmpty()) {
            $posts = "empty";
          }

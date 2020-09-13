@@ -27,10 +27,11 @@
           @else
             @if(auth()->user()->id == $member->id)
               @foreach($posts as $recipe)
-                @if ($loop->index <= 7)
                   <section class="col-md-3 card m-1">
-                    @if()
+                    @if($recipe->image_path == null)
+                    @else
                       <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="">
+                    @endif
                     <div class="card-content">
                       <div class="card-title">{{ str_limit($recipe->name, 70) }}</div>
                       <p class="card-text">{{ str_limit($recipe->introduction, 200) }}</p>
@@ -39,12 +40,12 @@
                       <a href="{{ action('Admin\RecipeController@delete', ['id' => $recipe->id, 'user_id' => $recipe->user->id]) }}">削除</a>
                     </div>
                   </section>
-                @endif
               @endforeach
             @else
               @include('parts.recipe')
             @endif
           @endguest
         </div>
+        {{ $posts->links() }} 
     </div>
 @endsection

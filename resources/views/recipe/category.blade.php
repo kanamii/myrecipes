@@ -12,5 +12,6 @@
         <div class="row">
           @include('parts.recipe')
         </div>
+        {{ $posts->links() }}
     </div>
 @endsection

@@ -72,7 +72,6 @@
                     <a href="{{ url('/') }}" class="m-1">トップ</a>
                     <a href="{{ url('/register') }}" class="m-1">会員登録</a>
                     <a href="{{ url('/login') }}">ログイン</a>
-                    <a href="{{ route('recipe.index') }}">レシピ一覧</a>
                 </div>
             </div>
             <main class="py-4">

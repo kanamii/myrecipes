@@ -12,8 +12,6 @@
         <div class="row">
           @include('parts.recipe')
         </div>
-        <div class="row">
-          <a href="{{ route('recipe.index') }}">もっとみる</a>
-        </div>
+         {{ $posts->links() }}
     </div>
 @endsection
