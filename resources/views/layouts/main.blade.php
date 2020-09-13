@@ -36,6 +36,7 @@
                     {{-- ログインしていたらメンバーページとログアウトボタンを表示 --}}
                     @else
                         <a href="{{ route('member', auth()->user()->id) }}">{{ auth()->user()->name }}</a>
+                        <a href="{{ route('member.edit', auth()->user()->id) }}">プロフィール編集</a>
                         <a class="btn btn-info m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
