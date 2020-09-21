@@ -46,6 +46,9 @@ class UserController extends Controller
       // 該当するデータを上書きして保存する
       $member->fill($member_form)->save();
       
-      return view('recipe.index');
+      $user_id = $member->id;
+      
+      return redirect()->route('member', ['id' => $user_id]);
+      // return view('recipe.index');
   }
 }

@@ -12,14 +12,20 @@
         <div class="row">
             <img src="#" alt="">
             <p>{{ $recipe_form->category }}</p>
-            <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->user->image_path) }}" alt="">
+            @if($recipe_form->image_path == null)
+                <img class="card-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
+            @else
+                <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->user->image_path) }}" alt="">
+            @endif
             <p>投稿者：</p>
             <a href="{{ route('member', ['id' => $recipe_form->user->id]) }}">{{ $recipe_form->user->name }}</a>
-
-            <a href="{{ route('recipe.edit', ['id' => $recipe_form->id]) }}">レシピ編集ページ</a>
         </div>
         <div class="row">
-            <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->image_path) }}" alt="">
+            @if($recipe_form->image_path == null)
+                <img class="card-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
+            @else
+                <img class="card-img" src="{{ asset('storage/image/' . $recipe_form->image_path) }}" alt="">
+            @endif
             <p>{{ $recipe_form->introduction }}</p>
         </div>
         <table class="table table-striped col-md-6">

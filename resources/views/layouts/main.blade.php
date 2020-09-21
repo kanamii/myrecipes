@@ -24,7 +24,7 @@
     <body>
         <div id="app">
             <div class="header-logo row">
-                <img src="./storage/topphoto.jpg" alt="トップページ" width="140">
+                <a href="{{ url('/') }}" class="m-1"><img src="{{ asset('storage/topphoto.jpg') }}" alt="トップページ" width="140"></a>
                 <h1>My Recipes</h1>
             </div>
             <div class="container">
@@ -35,10 +35,11 @@
                         <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
                     {{-- ログインしていたらメンバーページとログアウトボタンを表示 --}}
                     @else
-                        <a href="{{ route('member', auth()->user()->id) }}">{{ auth()->user()->name }}</a>
-                        <a href="{{ route('member.edit', auth()->user()->id) }}">プロフィール編集</a>
+                        <a class="btn btn-info m-1" href="{{ route('member', auth()->user()->id) }}">マイページ</a>
+                        <a class="btn btn-info m-1" href="{{ route('member.edit', auth()->user()->id) }}">マイページ編集</a>
+                        <a class="btn btn-info m-1" href="{{ route('recipe.add') }}">レシピ投稿</a>
                         <a class="btn btn-info m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            {{ __('messages.Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -59,20 +60,12 @@
                 <div class="row">
                     <form action="{{ action('RecipeController@categoryIndex') }}" method="get">
                         <label for="category">カテゴリーから探す</label>
-                        <input type="submit" name="category" value="ケーキ" class="btn btn-info col-md-2 m-1">
-                        <input type="submit" name="category" value="焼き菓子" class="btn btn-info col-md-2 m-1">
-                        <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info col-md-2 m-1">
-                        <input type="submit" name="category" value="和菓子" class="btn btn-info col-md-2 m-1">
-                        <input type="submit" name="category" value="そのほか" class="btn btn-info col-md-2 m-1">
+                        <input type="submit" name="category" value="ケーキ" class="btn btn-info">
+                        <input type="submit" name="category" value="焼き菓子" class="btn btn-info">
+                        <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info">
+                        <input type="submit" name="category" value="和菓子" class="btn btn-info">
+                        <input type="submit" name="category" value="そのほか" class="btn btn-info">
                     </form>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <p>確認用リンク</p>
-                    <a href="{{ url('/') }}" class="m-1">トップ</a>
-                    <a href="{{ url('/register') }}" class="m-1">会員登録</a>
-                    <a href="{{ url('/login') }}">ログイン</a>
                 </div>
             </div>
             <main class="py-4">

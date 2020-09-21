@@ -22,7 +22,6 @@
         </div>
         <div class="row">
             <p>投稿レシピ一覧</p>
-            <a href="{{ route('recipe.add') }}" class="btn">レシピを投稿する</a>
         </div>
         <div class="row">
           @guest
@@ -37,11 +36,10 @@
                       <img class="card-img" src="{{ asset('storage/image/' . $recipe->image_path) }}" alt="">
                     @endif
                     <div class="card-content">
-                      <div class="card-title">{{ str_limit($recipe->name, 70) }}</div>
+                      <a class="card-title" href="{{ route('recipe', ['id' => $recipe->id]) }}">{{ str_limit($recipe->name, 70) }}</a>
+                      <a class="card-text" href="{{ route('recipe.edit', ['id' => $recipe->id]) }}">編集</a>
+                      <a class="card-text" href="{{ action('Admin\RecipeController@delete', ['id' => $recipe->id, 'user_id' => $recipe->user->id]) }}">削除</a>
                       <p class="card-text">{{ str_limit($recipe->introduction, 200) }}</p>
-                      <a href="{{ route('recipe', ['id' => $recipe->id]) }}">レシピページ</a>
-                      <a href="{{ route('recipe.edit', ['id' => $recipe->id]) }}">レシピ編集ページ</a>
-                      <a href="{{ action('Admin\RecipeController@delete', ['id' => $recipe->id, 'user_id' => $recipe->user->id]) }}">削除</a>
                     </div>
                   </section>
               @endforeach
