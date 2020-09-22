@@ -10,15 +10,13 @@
             </div>
         </div>
         <div class="row">
+          <p class="col">{{ $member->name }}</p>
           @if($member->image_path == null)
-            <img class="card-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
+            <img class="card-img col" src="{{ asset('storage/image/noimage.png') }}" alt="">
           @else
-            <img class="card-img" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
+            <img class="card-img col" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
           @endif
-            <p>{{ $member->name }}</p>
-        </div>
-        <div class="row">
-            <p>{{ $member->introduction }}</p>
+          <p class="col">{{ $member->introduction }}</p>
         </div>
         <div class="row">
             <p>投稿レシピ一覧</p>

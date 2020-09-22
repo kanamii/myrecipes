@@ -1,7 +1,7 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #CEE8D7;
+  background-color: #FFF;
   color: #6E552F;
 }
 
@@ -86,7 +86,14 @@ body {
 }
 
 .header-logo {
-  background-color: #f6e355;
+  background-color: #CEE8D7;
   color: #e88a73;
   padding: 20px 30px 20px 50px;
+}
+
+.member-img {
+  border-radius: 5px 5px 0 0;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }

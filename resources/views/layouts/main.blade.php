@@ -23,11 +23,11 @@
     </head>
     <body>
         <div id="app">
-            <div class="header-logo row">
-                <a href="{{ url('/') }}" class="m-1"><img src="{{ asset('storage/topphoto.jpg') }}" alt="トップページ" width="140"></a>
-                <h1>My Recipes</h1>
-            </div>
-            <div class="container">
+            <div class="header-logo">
+                <div class="row">
+                    <a href="{{ url('/') }}"><img src="{{ asset('storage/topphoto.jpg') }}" alt="トップページ" width="140"></a>
+                    <h1>My Recipes</h1>
+                </div>
                 <div class="text-right">
                     {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                     @guest
@@ -45,26 +45,25 @@
                             @csrf
                         </form>
                     @endguest
-                </div>
-
-                <div class="text-left">
+                </div>   
+            </div>
+            <div class="container">
+                <div class="row">
                     <form class="form-inline" action="{{ action('RecipeController@searchIndex') }}" method="get">
                       <div class="form-group">
                         <label for="search">キーワードで探す</label>
                         <input type="text" class="form-control m-1" name="cond_title" placeholder="例：クッキー">
                       </div>
                       {{ csrf_field() }}
-                      <button type="submit" class="btn btn-default m-1">検索</button>
+                      <button type="submit" class="btn btn-light m-1">検索</button>
                     </form>
-                </div>
-                <div class="row">
-                    <form action="{{ action('RecipeController@categoryIndex') }}" method="get">
-                        <label for="category">カテゴリーから探す</label>
-                        <input type="submit" name="category" value="ケーキ" class="btn btn-info">
-                        <input type="submit" name="category" value="焼き菓子" class="btn btn-info">
-                        <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info">
-                        <input type="submit" name="category" value="和菓子" class="btn btn-info">
-                        <input type="submit" name="category" value="そのほか" class="btn btn-info">
+                    <form class="form-inline" action="{{ action('RecipeController@categoryIndex') }}" method="get">
+                        <label for="category" class="m-2">カテゴリーから探す</label>
+                        <input type="submit" name="category" value="ケーキ" class="btn btn-info m-1">
+                        <input type="submit" name="category" value="焼き菓子" class="btn btn-info m-1">
+                        <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info m-1">
+                        <input type="submit" name="category" value="和菓子" class="btn btn-info m-1">
+                        <input type="submit" name="category" value="そのほか" class="btn btn-info m-1">
                     </form>
                 </div>
             </div>
