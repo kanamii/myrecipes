@@ -4,19 +4,16 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 mx-auto">
-                <h5>メンバーページ</h5>
-            </div>
-        </div>
-        <div class="row">
-          <p class="col">{{ $member->name }}</p>
-          @if($member->image_path == null)
-            <img class="card-img col" src="{{ asset('storage/image/noimage.png') }}" alt="">
-          @else
-            <img class="card-img col" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
-          @endif
-          <p class="col">{{ $member->introduction }}</p>
+        <div class="member-h row">
+          <div class="member">
+            @if($member->image_path == null)
+              <img class="member1-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
+            @else
+              <img class="member1-img" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
+            @endif
+            <h3 class="member-name">{{ $member->name }}</h3>
+            <p class="member-i">{{ $member->introduction }}</p>
+          </div>
         </div>
         <div class="row">
             <p>投稿レシピ一覧</p>

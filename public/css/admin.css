@@ -91,9 +91,32 @@ body {
   padding: 20px 30px 20px 50px;
 }
 
-.member-img {
-  border-radius: 5px 5px 0 0;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+.member-h {
+  box-sizing: border-box;
+}
+.member {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.member1-img {
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin: 30px 15px 15px 15px;
+  border-radius: 50%;
+  border: 1px solid #6E552F;
+}
+
+.member-name {
+  float: left;
+  margin-top: 50px;
+  width: 620px;
+  height: 60px;
+  text-align: left;
+}
+
+.member-i {
+  float: left;
+  text-align: left;
 }

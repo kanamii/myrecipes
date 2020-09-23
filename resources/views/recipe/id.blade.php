@@ -6,6 +6,7 @@
     <div class="container">
         <div class="row">
             <h3>{{ $recipe_form->name }}</h3>
+            <span class="m-2">recipe by <a href="{{ route('member', ['id' => $recipe_form->user->id]) }}">{{ $recipe_form->user->name }}</a></span>
         </div>
         <div class="row">
             <div class="col">
@@ -15,37 +16,32 @@
                     <img class="card-img img-thumbnail" src="{{ asset('storage/image/' . $recipe_form->image_path) }}" alt="">
                 @endif
             </div>
-            <div class="col">
-                <p class="btn">{{ $recipe_form->category }}</p>
+            <div class="col card">
+                <span class="badge badge-pill badge-light m-2">　{{ $recipe_form->category }}　</span>
                 <p>{{ $recipe_form->introduction }}</p>
             </div>
             <div class="col">
-                @if($recipe_form->user->image_path == null)
-                    <img class="img-thumbnail member-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
-                @else
-                    <img class="img-thumbnail member-img" src="{{ asset('storage/image/' . $recipe_form->user->image_path) }}" alt="">
-                @endif
-                <a href="{{ route('member', ['id' => $recipe_form->user->id]) }}">{{ $recipe_form->user->name }}</a>
+                <table class="table table-striped">
+                    <tr>
+                        <th>材料</th>
+                        <th>分量</th>
+                    </tr>
+                    <tr>
+                        <td>{{ $recipe_form->item1 }}</td>
+                        <td>{{ $recipe_form->quantity1 }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ $recipe_form->item2 }}</td>
+                        <td>{{ $recipe_form->quantity2 }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ $recipe_form->item3 }}</td>
+                        <td>{{ $recipe_form->quantity3 }}</td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <table class="table table-striped col-xl-6 m-5">
-            <tr>
-                <th>材料</th>
-                <th>分量</th>
-            </tr>
-            <tr>
-                <td>{{ $recipe_form->item1 }}</td>
-                <td>{{ $recipe_form->quantity1 }}</td>
-            </tr>
-            <tr>
-                <td>{{ $recipe_form->item2 }}</td>
-                <td>{{ $recipe_form->quantity2 }}</td>
-            </tr>
-            <tr>
-                <td>{{ $recipe_form->item3 }}</td>
-                <td>{{ $recipe_form->quantity3 }}</td>
-            </tr>
-        </table>
+        
         <h7>手順</h7>
         <section class="card m-1">
             <div class="card-content">
