@@ -31,14 +31,14 @@
                 <div class="text-right">
                     {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                     @guest
-                        <a class="btn btn-info m-1" href="{{ route('login') }}">ログイン</a>
-                        <a class="btn btn-info m-1" href="{{ url('/register') }}" role="button">新規登録</a>
+                        <a class="btn header-btn m-1" href="{{ route('login') }}">ログイン</a>
+                        <a class="btn header-btn m-1" href="{{ url('/register') }}" role="button">新規登録</a>
                     {{-- ログインしていたらメンバーページとログアウトボタンを表示 --}}
                     @else
-                        <a class="btn btn-info m-1" href="{{ route('member', auth()->user()->id) }}">マイページ</a>
-                        <a class="btn btn-info m-1" href="{{ route('member.edit', auth()->user()->id) }}">マイページ編集</a>
-                        <a class="btn btn-info m-1" href="{{ route('recipe.add') }}">レシピ投稿</a>
-                        <a class="btn btn-info m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="btn header-btn m-1" href="{{ route('member', auth()->user()->id) }}">マイページ</a>
+                        <a class="btn header-btn m-1" href="{{ route('member.edit', auth()->user()->id) }}">マイページ編集</a>
+                        <a class="btn header-btn m-1" href="{{ route('recipe.add') }}">レシピ投稿</a>
+                        <a class="btn header-btn m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('messages.Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -47,24 +47,30 @@
                     @endguest
                 </div>   
             </div>
-            <div class="container">
-                <div class="row">
-                    <form class="form-inline" action="{{ action('RecipeController@searchIndex') }}" method="get">
-                      <div class="form-group">
-                        <label for="search">キーワードで探す</label>
-                        <input type="text" class="form-control m-1" name="cond_title" placeholder="例：クッキー">
-                      </div>
-                      {{ csrf_field() }}
-                      <button type="submit" class="btn btn-light m-1">検索</button>
-                    </form>
-                    <form class="form-inline" action="{{ action('RecipeController@categoryIndex') }}" method="get">
-                        <label for="category" class="m-2">カテゴリーから探す</label>
-                        <input type="submit" name="category" value="ケーキ" class="btn btn-info m-1">
-                        <input type="submit" name="category" value="焼き菓子" class="btn btn-info m-1">
-                        <input type="submit" name="category" value="ゼリー・アイス" class="btn btn-info m-1">
-                        <input type="submit" name="category" value="和菓子" class="btn btn-info m-1">
-                        <input type="submit" name="category" value="そのほか" class="btn btn-info m-1">
-                    </form>
+            <div class="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <form class="form-inline" action="{{ action('RecipeController@searchIndex') }}" method="get">
+                                <div class="form-group">
+                                    <label for="search">キーワードで探す</label>
+                                    <input type="text" class="form-control nav-form m-1" name="cond_title" placeholder="例：クッキー">
+                                </div>
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn nav-btn m-1">検索</button>
+                            </form>
+                        </div>
+                        <div class="col-md-7">
+                            <form class="form-inline" action="{{ action('RecipeController@categoryIndex') }}" method="get">
+                                <label for="category" class="m-2">カテゴリーから探す</label>
+                                <input type="submit" name="category" value="ケーキ" class="btn nav-btn m-1">
+                                <input type="submit" name="category" value="焼き菓子" class="btn nav-btn m-1">
+                                <input type="submit" name="category" value="ゼリー・アイス" class="btn nav-btn m-1">
+                                <input type="submit" name="category" value="和菓子" class="btn nav-btn m-1">
+                                <input type="submit" name="category" value="そのほか" class="btn nav-btn m-1">
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <main class="py-4">

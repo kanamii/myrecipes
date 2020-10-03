@@ -9,7 +9,7 @@
                 <h5>新着レシピ</h5>
             </div>
         </div>
-        <div class="row">
+        <div class="row mx-auto">
           @include('parts.recipe')
         </div>
          {{ $posts->links() }}
