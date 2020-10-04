@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background:#CEE8D7;">
+<nav class="navbar navbar-expand-lg navbar-light navbar-bg">
   <a class="navbar-brand" href="{{ url('/') }}">My Recipes</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
