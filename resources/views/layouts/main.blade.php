@@ -23,30 +23,7 @@
     </head>
     <body>
         <div id="app">
-            <div class="header-logo">
-                <div class="row">
-                    <a href="{{ url('/') }}"><img src="{{ asset('storage/topphoto.jpg') }}" alt="トップページ" width="140"></a>
-                    <h1>My Recipes</h1>
-                </div>
-                <div class="text-right">
-                    {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                    @guest
-                        <a class="btn header-btn m-1" href="{{ route('login') }}">ログイン</a>
-                        <a class="btn header-btn m-1" href="{{ url('/register') }}" role="button">新規登録</a>
-                    {{-- ログインしていたらメンバーページとログアウトボタンを表示 --}}
-                    @else
-                        <a class="btn header-btn m-1" href="{{ route('member', auth()->user()->id) }}">マイページ</a>
-                        <a class="btn header-btn m-1" href="{{ route('member.edit', auth()->user()->id) }}">マイページ編集</a>
-                        <a class="btn header-btn m-1" href="{{ route('recipe.add') }}">レシピ投稿</a>
-                        <a class="btn header-btn m-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('messages.Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    @endguest
-                </div>   
-            </div>
+            @include('parts.navbar')
             <div class="navigation">
                 <div class="container">
                     <div class="row">
