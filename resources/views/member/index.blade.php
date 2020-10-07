@@ -16,15 +16,17 @@
           </div>
         </div>
         <div class="row">
-            <p>投稿レシピ一覧</p>
+          <div class="col-md-12">
+            <h5>投稿レシピ一覧</h5>
+          </div>
         </div>
-        <div class="row mx-auto">
+        <div class="row">
           @guest
             @include('parts.recipe')
           @else
             @if(auth()->user()->id == $member->id)
               @foreach($posts as $recipe)
-                <div class="col-md-3 mt-2 mb-2">
+                <div class="col-md-3 col-6 mt-3 mb-3">
                   <section class="card">
                     <p class="img-wrap">
                       @if($recipe->image_path == null)

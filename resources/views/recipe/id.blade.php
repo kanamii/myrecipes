@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row mt-3 mb-3">
+        <div class="row col-md-12 mt-3 mb-3">
             <h3>{{ $recipe_form->name }}</h3>
             <span class="m-2">recipe by <a href="{{ route('member', ['id' => $recipe_form->user->id]) }}">{{ $recipe_form->user->name }}</a></span>
         </div>
@@ -17,7 +17,7 @@
                 @endif
             </div>
             <div class="col-md-4 card">
-                <span class="badge badge-pill badge-light m-2">　{{ $recipe_form->category }}　</span>
+                <span class="mx-auto badge-pill badge-light m-2">　{{ $recipe_form->category }}　</span>
                 <p>{!! nl2br(e($recipe_form->introduction)) !!}</p>
             </div>
             <div class="col-md-4">
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="mt-4 mb-2">
-            <h7>手順</h7>
+            <h4>手順</h4>
         </div>
         <section class="card m-1">
             <div class="card-content">
