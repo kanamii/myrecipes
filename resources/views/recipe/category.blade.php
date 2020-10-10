@@ -12,6 +12,10 @@
         <div class="row">
           @include('parts.recipe')
         </div>
-        {{ $posts->links() }}
+        <div class="d-flex">
+            <div class="mx-auto">
+                {{ $posts->links() }}
+            </div>
+        </div>
     </div>
 @endsection

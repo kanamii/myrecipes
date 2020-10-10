@@ -10,16 +10,22 @@
             </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
             @if($posts === "empty")
-              <p>検索結果がありません</p>
+              <div class="col-md-12">
+                <p>検索結果がありません</p>
+              </div>
             @elseif(isset($posts))
               @include('parts.recipe')
-              {{ $posts->links() }}
+              <div class="d-flex">
+                <div class="mx-auto">
+                  {{ $posts->links() }}
+                </div>
+              </div>
             @else
-              <p>検索条件を入力してください</p>
+              <div class="col-md-12">
+                <p>検索条件を入力してください</p>
+              </div>
             @endif
-          </div>
         </div>
     </div>
 @endsection
