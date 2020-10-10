@@ -49,10 +49,10 @@
             @endif
           @endguest
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            {{ $posts->links() }}
-          </div>
+        <div class="d-flex">
+            <div class="mx-auto">
+                {{ $posts->links() }}
+            </div>
         </div>
     </div>
 @endsection
