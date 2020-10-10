@@ -16,8 +16,8 @@
                     <img class="recipe-img" src="{{ asset('storage/image/' . $recipe_form->image_path) }}" alt="">
                 @endif
             </div>
-            <div class="col-md-4 card">
-                <span class="mx-auto badge-pill badge-light m-2">　{{ $recipe_form->category }}　</span>
+            <div class="col-md-4 t-area">
+                <div class="t-center">　{{ $recipe_form->category }}　</div>
                 <p>{!! nl2br(e($recipe_form->introduction)) !!}</p>
             </div>
             <div class="col-md-4">
@@ -44,17 +44,17 @@
         <div class="mt-4 mb-2">
             <h4>手順</h4>
         </div>
-        <section class="card m-1">
+        <section class="t-area m-1">
             <div class="card-content">
                 <p class="card-text">{!! nl2br(e($recipe_form->step1)) !!}</p>
             </div>
         </section>
-        <section class="card m-1">
+        <section class="t-area m-1">
             <div class="card-content">
                 <p class="card-text">{!! nl2br(e($recipe_form->step2)) !!}</p>
             </div>
         </section>
-        <section class="card m-1">
+        <section class="t-area m-1">
             <div class="card-content">
                 <p class="card-text">{!! nl2br(e($recipe_form->step3)) !!}</p>
             </div>

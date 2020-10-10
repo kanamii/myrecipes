@@ -48,6 +48,12 @@ body {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
+.t-area {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+
 .card {
   background: #fff;
   border-radius: 5px;
@@ -148,3 +154,13 @@ body {
 .recipe-img {
   width: 100%;
 }
+
+.t-center {
+  float:none;
+  width: 100%;
+  margin:0 auto;
+}
+
+.pagiWrapper{
+   text-align:center;
+}     
