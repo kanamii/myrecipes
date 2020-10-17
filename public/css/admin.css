@@ -114,6 +114,12 @@ body {
   color: #0090aa;
 }
 
+.card-category {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #ccc;
+}
+
 .header-logo {
   background-color: #CEE8D7;
   color: #e88a73;

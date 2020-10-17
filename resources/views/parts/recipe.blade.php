@@ -10,6 +10,7 @@
           @endif
         </p>
         <div class="card-content">
+          <p class="card-category">{{ str_limit($post->category, 40) }}</p>
           <p class="card-title">{{ str_limit($post->name, 40) }}</p>
         </div>
       </div>
