@@ -84,6 +84,7 @@ body {
 
 .card-content {
   padding: 20px;
+  color: #333;
 }
 
 .card-title {
@@ -94,8 +95,14 @@ body {
 }
 
 .card-text {
-  color: #777;
   line-height: 1.5;
+  color: #333;
+}
+
+.card-edit {
+  color: #333;
+  padding: 5px 10px;
+  border: solid 1px #ccc;
 }
 
 .card-link {
@@ -117,7 +124,8 @@ body {
 .card-category {
   display: inline-block;
   padding: 5px 10px;
-  background: #ccc;
+  background: #FEDFE1;
+  color: #333;
 }
 
 .header-logo {
@@ -169,4 +177,8 @@ body {
 
 .pagiWrapper{
    text-align:center;
-}     
+} 
+
+.right {
+  text-align: right;
+}
