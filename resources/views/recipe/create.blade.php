@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h5>レシピ編集</h5>
+                <h5>新規レシピ投稿</h5>
             </div>
         </div>
         <form action="{{ action('Admin\RecipeController@create') }}" method="post" enctype="multipart/form-data">
@@ -70,7 +70,7 @@
             <textarea class="form-control" rows="3" name="step3"></textarea>
           </div>
           {{ csrf_field() }}
-          <button type="submit" class="btn">投稿</button>
+          <button type="submit" class="recipe-btn">投稿</button>
         </form>
     </div>
 @endsection
