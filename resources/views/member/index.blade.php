@@ -7,9 +7,10 @@
         <div class="member-h row">
           <div class="member">
             @if($member->image_path == null)
+              
               <img class="member1-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
             @else
-              <img class="member1-img" src="{{ asset('storage/image/' . $member->image_path) }}" alt="">
+              <img src="{{ $member->image_path }}"  class="member1-img">
             @endif
             <h3 class="member-name">{{ $member->name }}</h3>
             <p class="member-i">{!! nl2br(e($member->introduction)) !!}</p>

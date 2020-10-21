@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Storage;
 use App\User;
 
 class UserController extends Controller
@@ -34,8 +34,8 @@ class UserController extends Controller
       // 送信されてきたフォームデータを格納する
       $member_form = $request->all();
       if (isset($member_form['profileImage'])) {
-        $path = $request->file('profileImage')->store('public/image');
-        $member->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$member_form['profileImage'],'public');
+        $member->image_path = Storage::disk('s3')->url($path);
         unset($member_form['profileImage']);
       } elseif (isset($request->remove)) {
         $member->image_path = null;
