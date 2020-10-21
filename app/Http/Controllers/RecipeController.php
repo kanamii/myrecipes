@@ -21,8 +21,9 @@ class RecipeController extends Controller
   {
       // UserModelからデータを取得する
       $member = User::find($request->id);
+      
       $posts = Recipe::where('user_id', $member->id)->orderBy('created_at', 'desc')->paginate(8); // $userによる投稿を取得し投稿作成日が新しい順に並べる
-
+      
       return view('member.index', ['member' => $member, 'posts' => $posts, ]);
   }
     
@@ -50,7 +51,7 @@ class RecipeController extends Controller
       $category = $request->category;
       
       // 一致するレシピデータを取得する
-      $posts = Recipe::where('category', 'like', $category)->paginate(8);
+      $posts = Recipe::where('category', 'like', $category)->orderBy('created_at', 'desc')->paginate(8);
       
       return view('recipe.category', ['posts' => $posts, 'name' => $category]);
   }

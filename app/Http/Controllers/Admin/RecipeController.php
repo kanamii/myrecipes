@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Recipe;
 use App\User;
+use Storage;
 
 class RecipeController extends Controller
 {
@@ -32,8 +33,8 @@ class RecipeController extends Controller
 
       // フォームから画像が送信されてきたら、保存して、$recipe->image_path に画像のパスを保存する
       if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $recipe->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $recipe->image_path = Storage::disk('s3')->url($path);
       } else {
         $recipe->image_path = null;
       }
@@ -75,8 +76,8 @@ class RecipeController extends Controller
       // 送信されてきたフォームデータを格納する
       $recipe_form = $request->all();
       if (isset($recipe_form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $recipe->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $recipe->image_path = Storage::disk('s3')->url($path);
         unset($recipe_form['image']);
       } elseif (isset($request->remove)) {
         $recipe->image_path = null;
