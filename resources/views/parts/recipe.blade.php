@@ -6,7 +6,7 @@
           @if($post->image_path == null)
             <img class="card-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
           @else
-            <img src="{{ $post->image_path }}"  class="card-img">
+            <img src="{{ $post->image_path }}" class="card-img">
           @endif
         </p>
         <div class="card-content">
