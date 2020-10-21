@@ -49,6 +49,5 @@ class UserController extends Controller
       $user_id = $member->id;
       
       return redirect()->route('member', ['id' => $user_id]);
-      // return view('recipe.index');
   }
 }
