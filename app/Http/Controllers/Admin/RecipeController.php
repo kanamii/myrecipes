@@ -51,8 +51,10 @@ class RecipeController extends Controller
       $recipe->save();
       
       $user_id = $recipe->user_id;
-
-      return redirect()->route('member', ['id' => $user_id]);
+      
+      $posts = Recipe::latest()->paginate(8);
+      return redirect()->route('hone', ['posts' => $posts]);
+      // return redirect()->route('member', ['id' => $user_id]);
   }
   
   // レシピ編集画面を開く
