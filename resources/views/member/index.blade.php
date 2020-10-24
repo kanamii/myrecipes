@@ -7,7 +7,7 @@
         <div class="member-h row">
           <div class="member">
             @if($member->image_path == null)
-              <img class="member1-img" src="{{ asset('https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png') }}">
+              <img class="member1-img" src="https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png">
             @else
               <img src="{{ $member->image_path }}" class="member1-img">
             @endif
@@ -31,7 +31,7 @@
                     <div class="card">
                       <p class="img-wrap">
                         @if($recipe->image_path == null)
-                          <img class="card-img" src="{{ asset('https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png') }}" alt="">
+                          <img class="card-img" src="https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png" alt="">
                         @else
                           <img src="{{ $recipe->image_path }}" class="card-img">
                         @endif

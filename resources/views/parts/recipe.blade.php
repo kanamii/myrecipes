@@ -4,7 +4,7 @@
       <div class="card">
         <p class="img-wrap">
           @if($post->image_path == null)
-            <img class="card-img" src="{{ asset('https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png') }}" alt="">
+            <img class="card-img" src="https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png" alt="">
           @else
             <img src="{{ $post->image_path }}" class="card-img">
           @endif
