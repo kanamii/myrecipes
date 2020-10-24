@@ -50,7 +50,7 @@ class RecipeController extends Controller
       $recipe->fill($form);
       $recipe->save();
       
-      $user_id = $recipe->user_id;
+      // $user_id = $recipe->user_id;
       
       $posts = Recipe::latest()->paginate(8);
       return redirect()->route('hone', ['posts' => $posts]);
