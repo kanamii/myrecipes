@@ -11,9 +11,9 @@
         <div class="row">
             <div class="col-md-4">
                 @if($recipe_form->image_path == null)
-                    <img class="recipe-img" src="{{ asset('storage/image/noimage.png') }}" alt="">
+                    <img class="recipe-img" src="https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png">
                 @else
-                    <img class="recipe-img" src="{{ asset('storage/image/' . $recipe_form->image_path) }}" alt="">
+                    <img class="recipe-img" src="{{ $post->image_path }}">
                 @endif
             </div>
             <div class="col-md-4 t-area">
