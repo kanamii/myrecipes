@@ -24,11 +24,11 @@
           <div class="form-group">
             <label for="category">カテゴリー</label>
             <select class="form-control" name="category" value="{{ $recipe_form->category }}">
-              <option>ケーキ</option>
-              <option>焼き菓子</option>
-              <option>ゼリー・アイス</option>
-              <option>和菓子</option>
-              <option>そのほか</option>
+              <option value="ケーキ" {{ $recipe_form->category == 'ケーキ' ? 'selected' : '' }} >ケーキ</option>
+              <option value="焼き菓子" {{ $recipe_form->category == '焼き菓子' ? 'selected' : '' }} >焼き菓子</option>
+              <option value="ゼリー・アイス" {{ $recipe_form->category == 'ゼリー・アイス' ? 'selected' : '' }} >ゼリー・アイス</option>
+              <option value="和菓子" {{ $recipe_form->category == '和菓子' ? 'selected' : '' }} >和菓子</option>
+              <option value="そのほか" {{ $recipe_form->category == 'そのほか' ? 'selected' : '' }} >そのほか</option>
             </select>
           </div>
           <div class="form-group">
