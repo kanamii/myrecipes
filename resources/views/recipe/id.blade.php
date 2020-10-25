@@ -13,7 +13,7 @@
                 @if($recipe_form->image_path == null)
                     <img class="recipe-img" src="https://techmyrecipes.s3-ap-northeast-1.amazonaws.com/noimage.png">
                 @else
-                    <img class="recipe-img" src="{{ $post->image_path }}">
+                    <img class="recipe-img" src="{{ $recipe_form->image_path }}">
                 @endif
             </div>
             <div class="col-md-4 t-area">
